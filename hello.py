@@ -76,4 +76,15 @@ def create_visualizations(df):
     profit_by_country = px.bar(df_filtered, x="Country", y="Profit", color="Country", title="Profit by Country")
     st.plotly_chart(profit_by_country)
 
+     # Visualization 6: Sales vs Profit Scatter Plot
+    sales_vs_profit = px.scatter(df_filtered, x="Sales", y="Profit", color="Category", title="Sales vs Profit Scatter Plot")
+
+    # Display visualizations side by side
+    col1, col2 = st.columns(2)
+    with col1:
+        st.plotly_chart(sales_by_region)
+        st.plotly_chart(sales_by_category)
+        st.plotly_chart(sales_by_subcategory)
+    with col2:
+        st.plotly_chart(profit_by_region)
 create_visualizations(df_filtered)
