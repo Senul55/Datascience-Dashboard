@@ -37,13 +37,7 @@ st.sidebar.header("Please Filter Here"):
     )
     df_filtered = df[df["Category"].isin(category_filter)]
     
-    # Filter by category
-        category_filter = st.multiselect(
-            "Filter by Region",
-            options=df["Region"].unique(),
-            default=df["Region"].unique(),
-        )
-    
+ 
     # Filter by sales channel (if applicable)
     if "Sales Channel" in df.columns:
         sales_channel_filter = st.multiselect(
