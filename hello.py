@@ -7,9 +7,11 @@ import pandas as pd
 # Setting page configuration
 st.set_page_config(
     page_title="Global Superstore Sales Dashboardd",
-    page_icon=":chart_with_upwards_trend:",
+    page_icon=":bar_chart:",
     layout="wide",  # Adjust layout as needed
 )
+
+st.dataframe(df)
 
 # Sample data (replace with your CSV path)
 df = pd.read_csv("Processed_GlobalSuperstoreLite.csv")
