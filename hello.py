@@ -11,6 +11,7 @@ st.set_page_config(
 
 # Sample data (replace with your CSV path)
 df = pd.read_csv("Processed_GlobalSuperstoreLite.csv")
+st.dataframe(df)
 
 # Main title
 st.title("Global Superstore Sales Dashboard")
