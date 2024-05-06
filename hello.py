@@ -51,3 +51,52 @@ kpi1 = st.metric(label="Total Sales", value=df_filtered["Sales"].sum().astype(fl
 kpi2 = st.metric(label="Average Profit Margin", value=df_filtered["Profit"].mean().astype(float))
 # Add more KPIs as needed
 
+# Charts and visualizations
+st.header("Charts and Visualizations")
+
+# Sales by category (pie chart)
+category_sales = df_filtered.groupby("Category")["Sales"].sum().reset_index()
+st.pie_chart(category_sales, values="Sales", labels="Category", title="Sales by Category")
+
+# Sales over time (line chart)
+sales_over_time = (
+    df_filtered.groupby(pd.Grouper(key="Order Date", freq="M"))["Sales"]
+    .sum()
+    .reset_index()
+)
+st.line_chart(sales_over_time, x="Order Date", y="Sales", title="Sales Over Time")
+
+# Additional visualizations based on column names:
+
+# Sales by product (bar chart)
+product_sales = df_filtered.groupby("Product Name")["Sales"].sum().reset_index()
+st.bar_chart(product_sales, x="Product Name", y="Sales", title="Sales by Product")
+
+# Profit by customer (scatter plot)
+customer_profit = df_filtered.groupby("Customer Name")["Profit"].sum().reset_index()
+st.scatter_plot(customer_profit, x="Customer Name", y="Profit", title="Profit by Customer")
+
+# Sales by region (map)
+if "Country" in df.columns:
+    st.map(df_filtered, zoom=1)  # Adjust zoom level as needed
+
+# Order quantity distribution (histogram)
+st.histogram(df_filtered["Quantity"], bins=10, title="Order Quantity Distribution")
+
+# Returned orders analysis (pie chart)
+returned_orders = df_filtered[df_filtered["Returned"] == "Yes"]
+st.pie_chart(
+    returned_orders,
+    values="Sales",
+    labels="Category",
+    title="Returned Orders by Category",
+)
+
+# ... Add more visualizations based on your specific needs and data
+
+# Additional enhancements
+# - Add a dropdown menu to switch between different visualizations for the same data.
+# - Implement interactivity between charts using libraries like Altair or Bokeh.
+# - Customize the dashboard layout and theme using Streamlit's theming capabilities.
+# - Consider adding a data download button for the filtered data.
+
