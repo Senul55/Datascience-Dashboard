@@ -30,7 +30,7 @@ else:
 st.sidebar.header("Please Filter Here:")
    
     # Filter by category
-    category_filter = st.multiselect(
+category_filter = st.multiselect(
         "Filter by Category",
         options=df["Category"].unique(),
         default=df["Category"].unique(),
