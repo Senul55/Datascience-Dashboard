@@ -4,7 +4,7 @@ import plotly.express as px
 
 # Setting page configuration
 st.set_page_config(
-    page_title="Global Superstoree",
+    page_title="Global Superstore",
     page_icon=":chart_with_upwards_trend:"
 )
 
@@ -22,4 +22,3 @@ if not df.empty:
     st.write(df.head())  # Displaying the first few rows of the dataframe
 else:
     st.error("Failed to load data. Please check the file path.")
-
