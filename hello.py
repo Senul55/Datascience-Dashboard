@@ -27,7 +27,8 @@ else:
     st.error("Failed to load data. Please check the file path.")
 
 # Create sidebar for interactive filters
-with st.sidebar:
+st.sidebar.header("Please Filter Here"):
+   
     # Filter by category
     category_filter = st.multiselect(
         "Filter by Category",
@@ -35,7 +36,14 @@ with st.sidebar:
         default=df["Category"].unique(),
     )
     df_filtered = df[df["Category"].isin(category_filter)]
-
+    
+    # Filter by category
+        category_filter = st.multiselect(
+            "Filter by Region",
+            options=df["Region"].unique(),
+            default=df["Region"].unique(),
+        )
+    
     # Filter by sales channel (if applicable)
     if "Sales Channel" in df.columns:
         sales_channel_filter = st.multiselect(
