@@ -76,7 +76,7 @@ def create_visualizations(df):
     profit_by_country = px.bar(df_filtered, x="Country", y="Profit", color="Country", title="Profit by Country")
     st.plotly_chart(profit_by_country)
 
-     # Visualization 6: Sales vs Profit Scatter Plot
-    sales_vs_profit = px.scatter(df_filtered, x="Sales", y="Profit", color="Category", title="Sales vs Profit Scatter Plot")
+    # Visualization 7: Order Priority Pie Chart
+    order_priority_pie = px.pie(df_filtered, values="Count of Orders", names="Order Priority", title="Order Priority Distribution")
 
 create_visualizations(df_filtered)
