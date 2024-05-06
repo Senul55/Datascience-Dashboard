@@ -39,13 +39,13 @@ df_filtered = df[df["Category"].isin(category_filter)]
     
  
     # Filter by sales channel (if applicable)
-    if "Sales Channel" in df.columns:
+if "Sales Channel" in df.columns:
         sales_channel_filter = st.multiselect(
             "Filter by Sales Channel",
             options=df["Sales Channel"].unique(),
             default=df["Sales Channel"].unique(),
         )
-        df_filtered = df_filtered[df_filtered["Sales Channel"].isin(sales_channel_filter)]
+df_filtered = df_filtered[df_filtered["Sales Channel"].isin(sales_channel_filter)]
 
     # Filter by other relevant columns (e.g., region, date, etc.)
     # ...
