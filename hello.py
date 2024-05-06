@@ -51,17 +51,14 @@ kpi1 = st.metric(label="Total Sales", value=df_filtered["Sales"].sum().astype(fl
 kpi2 = st.metric(label="Average Profit Margin", value=df_filtered["Profit"].mean().astype(float))
 # Add more KPIs as needed
 
+# ... (your code before the visualizations section)
+
 # Charts and visualizations
 st.header("Charts and Visualizations")
 
-
-# Sales over time (line chart)
-sales_over_time = (
-    df_filtered.groupby(pd.Grouper(key="Order Date", freq="M"))["Sales"]
-    .sum()
-    .reset_index()
-)
-st.line_chart(sales_over_time, x="Order Date", y="Sales", title="Sales Over Time")
+# Sales over time (line chart without grouping)
+sales_over_time = df_filtered["Sales"]
+st.line_chart(sales_over_time, y="Sales", title="Total Sales Over Time")
 
 # Additional visualizations based on column names:
 
@@ -96,4 +93,3 @@ st.pie_chart(
 # - Implement interactivity between charts using libraries like Altair or Bokeh.
 # - Customize the dashboard layout and theme using Streamlit's theming capabilities.
 # - Consider adding a data download button for the filtered data.
-
