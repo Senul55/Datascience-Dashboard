@@ -54,14 +54,14 @@ kpi2 = st.metric(label="Average Profit Margin", value=df_filtered["Profit"].mean
 st.header("Charts and Visualizations")
 
 # Plot the pie chart
-    fig, ax = plt.subplots()
-    ax.pie(order_priority_counts, labels=order_priority_counts.index, autopct='%1.1f%%')
+fig, ax = plt.subplots()
+ax.pie(order_priority_counts, labels=order_priority_counts.index, autopct='%1.1f%%')
 
-    # Add a title
-    ax.set_title('Order Priority Distribution')
+# Add a title
+ax.set_title('Order Priority Distribution')
 
-    # Equal aspect ratio ensures that pie is drawn as a circle
-    ax.axis('equal')
+# Equal aspect ratio ensures that pie is drawn as a circle
+ax.axis('equal')
 
-    # Show the chart
-    st.pyplot(fig)
+# Show the chart
+st.pyplot(fig)
