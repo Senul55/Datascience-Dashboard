@@ -76,8 +76,4 @@ def create_visualizations(df):
     profit_by_country = px.bar(df_filtered, x="Country", y="Profit", color="Country", title="Profit by Country")
     st.plotly_chart(profit_by_country)
 
-   # Visualization 5: Sales by Month
-    sales_by_month = px.line(df_filtered, x=df_filtered["Order Date"].dt.month, y="Sales", title="Sales by Month")
-    st.plotly_chart(sales_by_month)
-
 create_visualizations(df_filtered)
