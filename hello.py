@@ -27,7 +27,7 @@ else:
     st.error("Failed to load data. Please check the file path.")
 
 # Create sidebar for interactive filters
-st.sidebar.header("Please Filter Here"):
+st.sidebar.header("Please Filter Here:")
    
     # Filter by category
     category_filter = st.multiselect(
