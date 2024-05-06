@@ -4,7 +4,7 @@ import plotly.express as px
 
 # Setting page configuration
 st.set_page_config(
-    page_title="Global Superstore Sales Dashboard",
+    page_title="Global Superstore Data Sales Dashboard",
     page_icon=":chart_with_upwards_trend:",
     layout="wide",  # Adjust layout as needed
 )
@@ -56,13 +56,28 @@ def calculate_kpis(df):
 
 kpi1, kpi2 = calculate_kpis(df_filtered)
 
-# Charts and visualizations
+# Visualizations
 def create_visualizations(df):
-    st.header("Charts and Visualizations")
+    st.header("Visualizations")
 
-    # Pie chart for order priority distribution
-    order_priority_counts = df["Order Priority"].value_counts()
-    fig = px.pie(order_priority_counts, names=order_priority_counts.index, title="Order Priority Distribution")
-    st.plotly_chart(fig)
+    # Visualization 1: Sales by Region
+    sales_by_region = px.bar(df_filtered, x="Region", y="Sales", color="Region", title="Sales by Region")
+    st.plotly_chart(sales_by_region)
+
+    # Visualization 2: Sales by Category
+    sales_by_category = px.bar(df_filtered, x="Category", y="Sales", color="Category", title="Sales by Category")
+    st.plotly_chart(sales_by_category)
+
+    # Visualization 3: Sales by Sub-Category
+    sales_by_subcategory = px.bar(df_filtered, x="Sub-Category", y="Sales", color="Sub-Category", title="Sales by Sub-Category")
+    st.plotly_chart(sales_by_subcategory)
+
+    # Visualization 4: Profit by Country
+    profit_by_country = px.bar(df_filtered, x="Country", y="Profit", color="Country", title="Profit by Country")
+    st.plotly_chart(profit_by_country)
+
+    # Visualization 5: Sales by Month
+    sales_by_month = px.line(df_filtered, x=df_filtered["Order Date"].dt.month, y="Sales", title="Sales by Month")
+    st.plotly_chart(sales_by_month)
 
 create_visualizations(df_filtered)
