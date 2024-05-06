@@ -12,4 +12,4 @@ df = pd.read_csv("Processed_GlobalSuperstoreLite.csv")
 
 
 # Main title
-st.title("Sales Dashboard")
+st.title("Sales Dashboardd")
