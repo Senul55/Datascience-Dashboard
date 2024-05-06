@@ -55,8 +55,15 @@ kpi2 = st.metric(label="Average Profit Margin", value=df_filtered["Profit"].mean
 st.header("Charts and Visualizations")
 
 # Sales by category (pie chart)
-category_sales = df_filtered.groupby("Category")["Sales"].sum().reset_index()
-st.pie_chart(category_sales, values="Sales", labels="Category", title="Sales by Category")
+pie_column = "Sales"
+
+# Create a DataFrame with value counts for the chosen column
+pie_data = df[pie_column].value_counts().reset_index(name="count")
+
+# Create the pie chart
+st.pie_chart(pie_data, values="count", names=pie_column, title="Pie Chart")
+
+
 
 # Sales over time (line chart)
 sales_over_time = (
