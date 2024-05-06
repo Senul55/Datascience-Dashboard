@@ -15,7 +15,7 @@ st.set_page_config(
 df = pd.read_csv("Processed_GlobalSuperstoreLite.csv")
 
 # Main title
-st.title("Global Superstore Sales Dashboard")
+st.title("Global Superstore Sales Dashboardd")
 
 # Data loading check
 if not df.empty:
