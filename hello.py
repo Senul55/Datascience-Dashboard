@@ -54,5 +54,5 @@ kpi2 = st.metric(label="Average Profit Margin", value=df_filtered["Profit"].mean
 st.header("Charts and Visualizations")
 
 # Sales by product (bar chart)
-st.bar_chart(Sales, x="Sub-Category", y="Sales", title="Sales by Product") 
+st.bar_chart(x="Sub-Category", y="Sales", title="Sales by Product") 
 
