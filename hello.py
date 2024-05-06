@@ -55,8 +55,16 @@ kpi2 = st.metric(label="Average Profit Margin", value=df_filtered["Profit"].mean
 st.header("Charts and Visualizations")
 
 # Plot the pie chart
-fig, ax = plt.subplots()
-ax.pie(order_priority_counts, labels=order_priority_counts.index, autopct='%1.1f%%')
+import streamlit as st
+import pandas as pd
+
+# ... (your code before the visualization section)
+
+# Pie chart for order priority distribution
+order_priority_counts = df["Order Priority"].value_counts()  # Count occurrences of each priority
+st.pie_chart(order_priority_counts, labels=order_priority_counts.index, title="Order Priority Distribution")
+
+# ... (your other visualizations and code)
 
 # Add a title
 ax.set_title('Order Priority Distribution')
