@@ -78,5 +78,6 @@ def create_visualizations(df):
 
     # Visualization 7: Order Priority Pie Chart
     order_priority_pie = px.pie(df_filtered, values="Count of Orders", names="Order Priority", title="Order Priority Distribution")
-
+    st.plotly_chart( order_priority_pie)
+    
 create_visualizations(df_filtered)
