@@ -35,7 +35,7 @@ category_filter = st.multiselect(
         options=df["Category"].unique(),
         default=df["Category"].unique(),
     )
-    df_filtered = df[df["Category"].isin(category_filter)]
+df_filtered = df[df["Category"].isin(category_filter)]
     
  
     # Filter by sales channel (if applicable)
