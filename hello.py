@@ -10,8 +10,9 @@ st.set_page_config(
     initial_sidebar_state="expanded"  # Expand sidebar by default
 )
 
-# Add a heading for the page
-st.title("Global Superstore Data Sales Dashboard")  # Use st.title for a bold heading
+import streamlit as st
+
+st.title("Global Superstore Data Sales Dashboard")
 
 # Add some colors to the background
 st.markdown("""
