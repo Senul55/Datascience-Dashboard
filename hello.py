@@ -3,14 +3,14 @@ import pandas as pd
 import plotly.express as px
 
 # Setting page configuration
-st.title("Global Superstore Data Sales Dashboard")
-
 st.set_page_config(
     page_title="Global Superstore Data Sales Dashboard",
     page_icon=":chart_with_upwards_trend:",
     layout="wide",  # Adjust layout as needed
     initial_sidebar_state="expanded"  # Expand sidebar by default
 )
+
+st.title("Global Superstore Dashboard")
 
 # Add some colors to the background
 st.markdown("""
