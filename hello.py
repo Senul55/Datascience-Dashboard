@@ -61,7 +61,7 @@ kpi1, kpi2 = calculate_kpis(df_filtered)
 # Visualizations
 def create_visualizations(df: pd.DataFrame) -> None:
     """Create visualizations"""
-    st.header("Visualizations")
+st.header("Visualizations")
 
     # Visualization 1: Sales by Region
     sales_by_region = px.bar(df, x="Region", y="Sales", color="Region", title="Sales by Region")
