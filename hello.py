@@ -8,7 +8,7 @@ st.set_page_config(
     page_icon=":chart_with_upwards_trend:",
     layout="wide",  # Adjust layout as needed
 )
-
+ st.header("Visualizations")
 # Load data
 def load_data(file_path):
     try:
