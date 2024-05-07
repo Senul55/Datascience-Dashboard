@@ -6,7 +6,7 @@ import plotly.express as px
 st.title("Global Superstore Data Sales Dashboard")
 
 st.set_page_config(
-    page_title="Global Superstore Data Sales Dashboard :bar_chart:",
+    page_title="Global Superstore Data Sales Dashboard",
     page_icon=":chart_with_upwards_trend:",
     layout="wide",  # Adjust layout as needed
     initial_sidebar_state="expanded"  # Expand sidebar by default
