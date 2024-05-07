@@ -19,7 +19,7 @@ ax.set_ylim(0, 10)
 heading_text = ax.text(50, 5, "Global Superstore Data Sales Dashboard", bbox=dict(facecolor='white', alpha=0.5), fontsize=20, ha="center")
 
 # Create a Streamlit title and some details
-st.title("Global Superstore Data Sales Dashboard")
+st.title("Global Superstore Dashboard")
 st.write("This dashboard displays sales data for the Global Superstore dataset. The data includes sales, profits, and customer information for various products and regions. The dashboard allows users to explore the data and gain insights into sales trends and customer behavior.")
 
 
