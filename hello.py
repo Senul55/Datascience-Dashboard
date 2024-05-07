@@ -68,8 +68,8 @@ def create_visualizations(df: pd.DataFrame) -> None:
     # Add some space between visualizations
     st.markdown("---")
 
-    # Visualization 2: Sales by Category
-    sales_by_category = px.bar(df, x="Category", y="Sales", color="Category", title="Sales by Category")
+   # Visualization 2: Sales by Category (Pie Chart)
+    sales_by_category = px.pie(df_filtered, values="Sales", names="Category", title="Sales by Category")
     st.plotly_chart(sales_by_category, use_container_width=True)
 
     # Add some space between visualizations
