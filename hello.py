@@ -87,14 +87,14 @@ def create_visualizations(df: pd.DataFrame) -> None:
     """Create visualizations"""
     # Visualization 1: Sales by Region
     sales_by_region = px.bar(df, x="Region", y="Sales", color="Region", title="Sales by Region")
-    st.col1.plotly_chart(sales_by_region, use_container_width=True)
+    col1.plotly_chart(sales_by_region, use_container_width=True)
 
     # Add some space between visualizations
     st.markdown("---")
 
    # Visualization 2: Sales by Category (Pie Chart)
     sales_by_category_pie = px.pie(df_filtered, values="Sales", names="Category", title="Sales by Category")
-    st.col2.plotly_chart(sales_by_category_pie, use_container_width=True)
+    col2.plotly_chart(sales_by_category_pie, use_container_width=True)
 
     # Add some space between visualizations
     st.markdown("---")
