@@ -58,6 +58,9 @@ def calculate_kpis(df: pd.DataFrame) -> tuple:
 
 kpi1, kpi2 = calculate_kpis(df_filtered)
 
+# Move this line outside the create_visualizations function
+st.header("Visualizations")
+
 # Visualizations
 def create_visualizations(df: pd.DataFrame) -> None:
     """Create visualizations"""
@@ -76,8 +79,5 @@ def create_visualizations(df: pd.DataFrame) -> None:
     # Visualization 4: Profit by Country
     profit_by_country = px.bar(df, x="Country", y="Profit", color="Country", title="Profit by Country")
     st.plotly_chart(profit_by_country)
-
-# Move this line outside the create_visualizations function
-st.header("Visualizations")
 
 create_visualizations(df_filtered)
