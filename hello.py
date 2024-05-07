@@ -7,7 +7,20 @@ st.set_page_config(
     page_title="Global Superstore Data Sales Dashboard",
     page_icon=":chart_with_upwards_trend:",
     layout="wide",  # Adjust layout as needed
+    initial_sidebar_state="expanded"  # Expand sidebar by default
 )
+
+# Add a heading for the page
+st.title("Global Superstore Data Sales Dashboard")  # Use st.title for a bold heading
+
+# Add some colors to the background
+st.markdown("""
+<style>
+body {
+    background-color: #f0f0f0;  # Light gray background
+}
+</style>
+""", unsafe_allow_html=True)
 
 # Load data
 def load_data(file_path: str) -> pd.DataFrame | None:
