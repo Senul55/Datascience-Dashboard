@@ -76,4 +76,4 @@ def create_visualizations(df):
     profit_by_country = px.bar(df_filtered, x="Country", y="Profit", color="Country", title="Profit by Country")
     st.plotly_chart(profit_by_country)
     
-create_visualizations(df_filtered)
+create_visualizations(df_filtered) 
