@@ -9,7 +9,8 @@ st.set_page_config(
     page_title="Global Superstore Data Sales Dashboard",
     page_icon=":chart_with_upwards_trend:",
     layout="wide",  # Adjust layout as needed
-    initial_sidebar_state="expanded"  # Expand sidebar by default
+    initial_sidebar_state="expanded",  # Expand sidebar by default
+    page_title_alignment="center"
 )
 
 fig, ax = plt.subplots()
@@ -22,10 +23,7 @@ heading_text = ax.text(50, 5, "Global Superstore Data Sales Dashboard", bbox=dic
 st.title("Global Superstore Data Sales Dashboard")
 st.write("This dashboard displays sales data for the Global Superstore dataset. The data includes sales, profits, and customer information for various products and regions. The dashboard allows users to explore the data and gain insights into sales trends and customer behavior.")
 
-# Create a Streamlit button to trigger the animation
-if st.button("Start Animation"):
-    # Remove the animation part
-    pass
+
 # Add some colors to the background
 st.markdown("""
 <style>
