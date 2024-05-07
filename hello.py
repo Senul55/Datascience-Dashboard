@@ -10,10 +10,10 @@ st.set_page_config(
 )
 
 # Load data
-def load_data(file_path):
+def load_data(file_path: str) -> pd.DataFrame | None:
+    """Load data from CSV file"""
     try:
-        df = pd.read_csv(file_path)
-        return df
+        return pd.read_csv(file_path)
     except Exception as e:
         st.error(f"Failed to load data: {e}")
         return None
@@ -25,7 +25,8 @@ if df is None:
     st.stop()
 
 # Create sidebar for interactive filters
-def create_filters(df):
+def create_filters(df: pd.DataFrame) -> pd.DataFrame:
+    """Create filters for data"""
     with st.sidebar:
         # Filter by category
         category_filter = st.multiselect(
@@ -49,7 +50,8 @@ def create_filters(df):
 df_filtered = create_filters(df)
 
 # Key performance indicators (KPIs)
-def calculate_kpis(df):
+def calculate_kpis(df: pd.DataFrame) -> tuple:
+    """Calculate KPIs"""
     kpi1 = st.metric(label="Total Sales", value=df["Sales"].sum().astype(float))
     kpi2 = st.metric(label="Average Profit Margin", value=df["Profit"].mean().astype(float))
     return kpi1, kpi2
@@ -57,23 +59,24 @@ def calculate_kpis(df):
 kpi1, kpi2 = calculate_kpis(df_filtered)
 
 # Visualizations
-def create_visualizations(df):
+def create_visualizations(df: pd.DataFrame) -> None:
+    """Create visualizations"""
     st.header("Visualizations")
 
     # Visualization 1: Sales by Region
-    sales_by_region = px.bar(df_filtered, x="Region", y="Sales", color="Region", title="Sales by Region")
+    sales_by_region = px.bar(df, x="Region", y="Sales", color="Region", title="Sales by Region")
     st.plotly_chart(sales_by_region)
 
     # Visualization 2: Sales by Category
-    sales_by_category = px.bar(df_filtered, x="Category", y="Sales", color="Category", title="Sales by Category")
+    sales_by_category = px.bar(df, x="Category", y="Sales", color="Category", title="Sales by Category")
     st.plotly_chart(sales_by_category)
 
     # Visualization 3: Sales by Sub-Category
-    sales_by_subcategory = px.bar(df_filtered, x="Sub-Category", y="Sales", color="Sub-Category", title="Sales by Sub-Category")
+    sales_by_subcategory = px.bar(df, x="Sub-Category", y="Sales", color="Sub-Category", title="Sales by Sub-Category")
     st.plotly_chart(sales_by_subcategory)
 
     # Visualization 4: Profit by Country
-    profit_by_country = px.bar(df_filtered, x="Country", y="Profit", color="Country", title="Profit by Country")
+    profit_by_country = px.bar(df, x="Country", y="Profit", color="Country", title="Profit by Country")
     st.plotly_chart(profit_by_country)
 
 create_visualizations(df_filtered)
