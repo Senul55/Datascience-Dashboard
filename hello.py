@@ -69,8 +69,8 @@ def create_visualizations(df: pd.DataFrame) -> None:
     st.markdown("---")
 
    # Visualization 2: Sales by Category (Pie Chart)
-    sales_by_category = px.pie(df_filtered, values="Sales", names="Category", title="Sales by Category")
-    st.plotly_chart(sales_by_category, use_container_width=True)
+    sales_by_category_pie = px.pie(df_filtered, values="Sales", names="Category", title="Sales by Category")
+    st.plotly_chart(sales_by_category_pie, use_container_width=True)
 
     # Add some space between visualizations
     st.markdown("---")
