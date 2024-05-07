@@ -13,7 +13,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"  # Expand sidebar by default
 )
 
-
 fig, ax = plt.subplots()
 ax.set_xlim(0, 100)
 ax.set_ylim(0, 10)
@@ -26,9 +25,13 @@ def animation_function(i):
 
 animation = FuncAnimation(fig, func=animation_function, frames=np.arange(0, 100, 1), interval=100)
 
-plt.show()
+# Create a Streamlit button to trigger the animation
+if st.button("Start Animation"):
+    # Convert the animation to a numpy array
+    animation_frames = np.array([animation.to_array() for i in range(100)])
 
-
+    # Display the animation using Streamlit's plotting function
+    st.pyplot(animation_frames)
 
 # Add some colors to the background
 st.markdown("""
