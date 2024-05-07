@@ -87,9 +87,9 @@ def create_visualizations(df: pd.DataFrame) -> None:
     col1,col2 = st.columns(2)
     sales_by_region = px.bar(df, x="Region", y="Sales", color="Region", title="Sales by Region")
     sales_by_region.update_layout(
-        plot_bgcolor="white",
+        plot_bgcolor="grey",
         paper_bgcolor="white",
-        title_x=0.5,
+        title_x=0.8,
         xaxis_title="Region",
         yaxis_title="Sales"
     )
