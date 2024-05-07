@@ -9,7 +9,6 @@ st.set_page_config(
     layout="wide",  # Adjust layout as needed
 )
 
-st.header=("Global Superstore Dashboard")
 
 # Load data
 def load_data(file_path):
