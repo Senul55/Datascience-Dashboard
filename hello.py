@@ -3,7 +3,6 @@ import pandas as pd
 import plotly.express as px
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.animation import FuncAnimation
 
 # Setting page configuration
 st.set_page_config(
@@ -19,20 +18,14 @@ ax.set_ylim(0, 10)
 
 heading_text = ax.text(50, 5, "Global Superstore Data Sales Dashboard", bbox=dict(facecolor='white', alpha=0.5), fontsize=20, ha="center")
 
-def animation_function(i):
-    heading_text.set_text(f"Global Superstore Data Sales Dashboard - Frame {i}")
-    heading_text.set_position((50, 5 + np.sin(i/10)*0.5))
-
-animation = FuncAnimation(fig, func=animation_function, frames=np.arange(0, 100, 1), interval=100)
+# Create a Streamlit title and some details
+st.title("Global Superstore Data Sales Dashboard")
+st.write("This dashboard displays sales data for the Global Superstore dataset. The data includes sales, profits, and customer information for various products and regions. The dashboard allows users to explore the data and gain insights into sales trends and customer behavior.")
 
 # Create a Streamlit button to trigger the animation
 if st.button("Start Animation"):
-    # Convert the animation to a numpy array
-    animation_frames = np.array([animation.to_array() for i in range(100)])
-
-    # Display the animation using Streamlit's plotting function
-    st.pyplot(animation_frames)
-
+    # Remove the animation part
+    pass
 # Add some colors to the background
 st.markdown("""
 <style>
