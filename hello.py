@@ -81,11 +81,9 @@ def calculate_kpis(df: pd.DataFrame) -> tuple:
 
 kpi1, kpi2 = calculate_kpis(df_filtered)
 
-# Visualizations
-col1, col2 = st.columns(2)
 def create_visualizations(df: pd.DataFrame) -> None:
-        """Create visualizations"""
-     # Visualization 1: Sales by Region
+    """Create visualizations"""
+    # Visualization 1: Sales by Region
     sales_by_region = px.bar(data, x="Region", y="Sales", color="Region", title="Sales by Region")
     sales_by_region.update_layout(
         plot_bgcolor="white",
