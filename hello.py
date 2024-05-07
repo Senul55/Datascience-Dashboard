@@ -9,8 +9,7 @@ st.set_page_config(
     page_title="Global Superstore Data Sales Dashboard",
     page_icon=":chart_with_upwards_trend:",
     layout="wide",  # Adjust layout as needed
-    initial_sidebar_state="expanded",  # Expand sidebar by default
-    page_title_alignment="center"
+    initial_sidebar_state="expanded" # Expand sidebar by default
 )
 
 fig, ax = plt.subplots()
