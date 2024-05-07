@@ -1,6 +1,9 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.animation import FuncAnimation
 
 # Setting page configuration
 st.set_page_config(
@@ -10,7 +13,22 @@ st.set_page_config(
     initial_sidebar_state="expanded"  # Expand sidebar by default
 )
 
-st.title("Global Superstore Dashboard")
+
+fig, ax = plt.subplots()
+ax.set_xlim(0, 100)
+ax.set_ylim(0, 10)
+
+heading_text = ax.text(50, 5, "Global Superstore Data Sales Dashboard", bbox=dict(facecolor='white', alpha=0.5), fontsize=20, ha="center")
+
+def animation_function(i):
+    heading_text.set_text(f"Global Superstore Data Sales Dashboard - Frame {i}")
+    heading_text.set_position((50, 5 + np.sin(i/10)*0.5))
+
+animation = FuncAnimation(fig, func=animation_function, frames=np.arange(0, 100, 1), interval=100)
+
+plt.show()
+
+
 
 # Add some colors to the background
 st.markdown("""
