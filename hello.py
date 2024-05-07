@@ -82,18 +82,19 @@ def calculate_kpis(df: pd.DataFrame) -> tuple:
 kpi1, kpi2 = calculate_kpis(df_filtered)
 
 # Visualizations
+col1, col2 = st.columns(2)
 def create_visualizations(df: pd.DataFrame) -> None:
     """Create visualizations"""
     # Visualization 1: Sales by Region
     sales_by_region = px.bar(df, x="Region", y="Sales", color="Region", title="Sales by Region")
-    st.plotly_chart(sales_by_region, use_container_width=True)
+    st.col1.plotly_chart(sales_by_region, use_container_width=True)
 
     # Add some space between visualizations
     st.markdown("---")
 
    # Visualization 2: Sales by Category (Pie Chart)
     sales_by_category_pie = px.pie(df_filtered, values="Sales", names="Category", title="Sales by Category")
-    st.plotly_chart(sales_by_category_pie, use_container_width=True)
+    st.col2.plotly_chart(sales_by_category_pie, use_container_width=True)
 
     # Add some space between visualizations
     st.markdown("---")
