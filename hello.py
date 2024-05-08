@@ -86,20 +86,6 @@ def create_visualizations(df: pd.DataFrame) -> None:
     # Visualization 1: Sales by Region
     col1,col2 = st.columns(2)
     sales_by_region = px.bar(df, x="Region", y="Sales", color="Region", title="Sales by Region")
-    sales_by_region.update_layout(
-        plot_bgcolor="white",
-        paper_bgcolor="grey",
-        title_x=0.8,
-        xaxis_title="Region",
-        yaxis_title="Sales"
-    )
-    sales_by_region.update_traces(
-        marker_color=["#4472C4", "#ED7D31", "#F7B84B"],
-        textposition="inside",
-        texttemplate="%{y:.2f}",
-        textfont_size=12,
-        hovertemplate="<b>%{x}</b><br>%{y:.2f}<extra></extra>"
-    )
     col1.plotly_chart(sales_by_region, use_container_width=True)
 
     # Add some space between visualizations
